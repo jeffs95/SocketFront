@@ -1,0 +1,35 @@
+<main class="main">
+  <div class="table-container">
+    <h2 class="table-title"> Tabla Mis amigos</h2>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 colored-table">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="center-text"> No. </th>
+        <td mat-cell *matCellDef="let element" class="center-text"> {{ element.id }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="center-text"> Nombre </th>
+        <td mat-cell *matCellDef="let element" class="center-text"> {{ element.name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef class="center-text"> Género </th>
+        <td mat-cell *matCellDef="let element" class="center-text"> {{ element.gender }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="oldValue">
+        <th mat-header-cell *matHeaderCellDef class="center-text"> Valor Anterior </th>
+        <td mat-cell *matCellDef="let element" class="center-text"> {{ element.oldValue }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="newValue">
+        <th mat-header-cell *matHeaderCellDef class="center-text"> Valor Nuevo </th>
+        <td mat-cell *matCellDef="let element" class="center-text"> {{ element.newValue }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</main>
